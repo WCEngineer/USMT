@@ -6,7 +6,7 @@ if (-not(Test-Path "$LocalUSMTPath")) {
 
 $global:RemoteUSMTPath = '\\wh3\worddoc\Computer Administration\USMT'
 
-$global:MigPath = (Join-Path (Join-Path $LocalUSMTPath "MigStore") $env:COMPUTERNAME)
+$global:MigPath = (Join-Path (Join-Path $RemoteUSMTPath "MigStore") $env:COMPUTERNAME)
 if (-not(Test-Path "$MigPath")) {
 	Write-Host "Creating directory '$MigPath'"
 	New-Item -Path "$MigPath" -ItemType Directory
