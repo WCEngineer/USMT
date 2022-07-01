@@ -8,4 +8,4 @@ $ProgFilePath = (Join-Path "$MigPath" ("$env:COMPUTERNAME" + "_" + (Split-Path -
 $LogFilePath = (Join-Path "$MigPath" ("$env:COMPUTERNAME" + "_" + (Split-Path -Path "$LocalUserName" -Leaf) + "_load.log"))
 
 Set-Location "$LocalExecutablePath"
-.\loadstate.exe "$MigPath" /config:"$ConfigPath" /v:13 /lac /lae /progress:"$ProgFilePath" /l:"$LogFilePath" /c /MU:"$LocalUserName":"$DomainUserName" /ue:*\* /ui:"$LocalUserName"
+.\loadstate.exe "$MigPath" /i:MigUser.xml /i:MigApp.xml /i:MigAppData.xml /v:13 /lac /lae /progress:"$ProgFilePath" /l:"$LogFilePath" /c /MU:"$LocalUserName":"$DomainUserName" /ue:*\* /ui:"$LocalUserName"
